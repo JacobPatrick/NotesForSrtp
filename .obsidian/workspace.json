@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "dd9d4c40d0b63fa0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "机械臂初始姿态计算.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ctc_pid参数整定实验记录.md",
+                "file": "机械臂初始姿态计算.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ctc_pid参数整定实验记录.md",
+                "file": "机械臂初始姿态计算.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ctc_pid参数整定实验记录.md"
+                "file": "机械臂初始姿态计算.md"
               }
             }
           }
@@ -147,9 +160,10 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "fd2d01ffc7c85f8c",
+  "active": "dd9d4c40d0b63fa0",
   "lastOpenFiles": [
-    "Welcome.md",
-    "ctc_pid参数整定实验记录.md"
+    "ctc_pid参数整定实验记录.md",
+    "机械臂初始姿态计算.md",
+    "Welcome.md"
   ]
 }
