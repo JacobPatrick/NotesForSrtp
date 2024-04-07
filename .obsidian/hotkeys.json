@@ -6,9 +6,23 @@
         "Shift"
       ],
       "key": "C"
+    },
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
     }
   ],
   "obsidian-git:push2": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "-"
+    },
     {
       "modifiers": [
         "Alt",
@@ -18,6 +32,13 @@
     }
   ],
   "obsidian-git:pull": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "="
+    },
     {
       "modifiers": [
         "Alt",
