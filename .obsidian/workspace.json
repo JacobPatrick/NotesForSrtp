@@ -18,17 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "b341782d29d4af59",
-            "type": "leaf",
-            "state": {
-              "type": "card-board-view",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -156,7 +147,7 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "b341782d29d4af59",
+  "active": "32ebc0d9309762e0",
   "lastOpenFiles": [
     "机械臂初始姿态计算.md",
     "ctc_pid参数整定实验记录.md",
