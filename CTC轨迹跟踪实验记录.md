@@ -197,7 +197,7 @@ waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
 waypointsTime = repmat([1;1;1],[1,n]);
 ```
 
-
+最初设定的轨迹是一个内接于单位圆的正50边形，但在模拟过程中出现奇异点，猜测是由于轨迹上的某些位置该机械臂nan'yi'dao
 # 六、下一步实验计划
 
 1. 仍然尝试用智能体调节pid参数的方式，将DDPG智能体换成TD3，SAC等，比较控制效果，希望在月底期中考试后一周左右的时间可以完成；
