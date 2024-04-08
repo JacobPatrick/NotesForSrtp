@@ -41,6 +41,8 @@
 	1. 提供了求刚体树形机器人闭式解的工具（算不了）
 3. [创建逆运动学求解器 - MATLAB - MathWorks 中国 --- Create inverse kinematic solver - MATLAB - MathWorks 中国](https://ww2.mathworks.cn/help/robotics/ref/inversekinematics-system-object.html)
 	1. 使用数值法求解机械臂逆运动学问题
+4. [Create tree-structured robot - MATLAB - MathWorks 中国](https://ww2.mathworks.cn/help/robotics/ref/rigidbodytree.html)
+	1. rigidBodyTree数据类型简介
 
 ## Robotics Model Toolbox
 
