@@ -216,6 +216,8 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 ![image.png](https://s2.loli.net/2024/04/08/1tlTycAizYgjw5D.png)
 
+如果暂时不考虑开始阶段远离目标轨迹的一段实际轨迹，CTC-PID控制机械臂轨迹跟踪的效果还是很好的，ci
+
 ### 5.2.2 随机折线轨迹
 
 ```matlab
