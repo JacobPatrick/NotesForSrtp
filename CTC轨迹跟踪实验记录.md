@@ -194,11 +194,13 @@ waypoints_z = ones(1,n+1) * 0.6500;
 
 waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
 
-waypointsTime = repmat([2;2;2],[1,n]);
+waypointsTime = repmat([1;1;1],[1,n]);
 ```
 
 
 # 六、下一步实验计划
+
+1. 
 
 # Notes
 
