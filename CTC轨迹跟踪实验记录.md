@@ -16,6 +16,21 @@
 
 # 二、开发与运行环境
 
+操作系统						Microsoft Windows 11 专业教育版 Version 10.0 (Build 22631)
+Java							Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+MATLAB                                                版本 9.14             (R2023a)
+Simulink                                              版本 10.7             (R2023a)
+Communications Toolbox                                版本 8.0              (R2023a)
+Control System Toolbox                                版本 10.13            (R2023a)
+DSP System Toolbox                                    版本 9.16             (R2023a)
+Deep Learning Toolbox                                 版本 14.6             (R2023a)
+Parallel Computing Toolbox                            版本 7.8              (R2023a)
+Reinforcement Learning Toolbox                        版本 2.4              (R2023a)
+Robotics System Toolbox                               版本 4.2              (R2023a)
+Signal Processing Toolbox                             版本 9.2              (R2023a)
+Simscape                                              版本 5.5              (R2023a)
+Simscape Multibody                                    版本 7.7              (R2023a)
+
 # 三、算法原理
 
 ## 3.1 逆运动学求解机械臂初始关节角度
@@ -31,7 +46,7 @@
 ## 4.1 求解初始关节角度
 
 ```matlab
-%%导入机械臂模型，并设置求解参数
+%% 导入机械臂模型，并设置求解参数
 robotRBT = DOF7_iiwa14;
 eeName = 'Body10';    % 末端执行器名称
 eePose = [1,0,0,0,0,-pi];    % 末端执行器初始位姿向量
@@ -39,14 +54,14 @@ TForm = eepose2tform(eePose);    % 将位姿向量转化为齐次变换矩阵
 weights = [1,1,1,1,1,1];    % 姿态误差加权向量
 initGuess = homeConfiguration(robotRBT);    % 关节角度迭代初值
 
-%%逆运动学求解初始关节角度
+%% 逆运动学求解初始关节角度
 % ik = inverseKinematics('RigidBodyTree',robotRBT);    % 创建用于逆运动学求解的求解器，默认使用BFGS算法求解
 ik = inverseKinematics('RigidBodyTree',robotRBT,'SolverAlgorithm','LevenbergMarquardt');    % 使用LM算法求解
 [config,info] = ik(eeName,TForm,weights,initGuess);    %逆运动学求解
 jointAngle = [config.JointPosition];
 disp(jointAngle);
 
-%%末端执行器位姿向量与齐次变换矩阵转换函数
+%% 末端执行器位姿向量与齐次变换矩阵转换函数
 function TForm = eepose2tform(eePose)
 	TrVec = eePose(1:3);
 	EulZYX = eePose(4:6);
@@ -68,23 +83,20 @@ Ts=0.001;
 
 DOF7_iiwa14=importrobot('iiwa14_multibody_waypoints');
 
-EulZYXpoints2 = [...
-                0  0  -pi;...
-                0  0  -pi;...
-                0  0  -pi;...
-                0  0  -pi;...
-                0  0  -pi]';
+% generate a n-side regular polygon trajectory
+n = 50;
+nlist = 1:n;
 
-waypoints2 =  [... 
-            -0.1250    0.5000      0.6500;...
-            -0.1250    0.3000      0.6500;...
-             0.0750    0.3000      0.6500;...
-             0.0750    0.5000      0.6500;...
-             -0.1250    0.5000      0.6500]';
+EulZYXpoints2 = repmat([0 0 -pi],[n,1]);
 
-waypointsTime = [ 2 2 2 2;
-                  2 2 2 2;
-                  2 2 2 2];
+waypoints_x = arrayfun(@cos,nlist)';
+waypoints_y = arrayfun(@sin,nlist)';
+waypoints_z = ones(1,n) * 0.6500;
+waypoints_z = waypoints_z';
+
+waypoints2 = [waypoints_x,waypoints_y,waypoints_z];
+
+waypointsTime = repmat([2 2 2]',[1,n]);
 
 %% CTC-PID Control
 mdl = 'iiwa14_multibody_dynamics_CTC_modified';
@@ -92,10 +104,14 @@ load_system(mdl);
 
 % assign the pid params
 kp = 10000;
-kd = 160;
+kd = 150;
 pid_params = sprintf('[%d %d]',kp,kd);
 path = [mdl,'/pid_params'];
 set_param(path,'Value',pid_params);
+
+% assign the initial guess of pose
+
+
 save_system(mdl);
 
 sim(mdl, [0 8]);
