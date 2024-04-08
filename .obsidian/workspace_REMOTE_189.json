@@ -1,0 +1,154 @@
+{
+  "main": {
+    "id": "9e34197326b62631",
+    "type": "split",
+    "children": [
+      {
+        "id": "25d266e46a25092e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32ebc0d9309762e0",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e6cc3614fb580282",
+    "type": "split",
+    "children": [
+      {
+        "id": "165cb2e0509580e2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7272063a83ad4b80",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "abb81819c2432296",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "be698fe9a5831088",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "63492313829104a3",
+    "type": "split",
+    "children": [
+      {
+        "id": "df9e309bd711a34b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6be5dc9b9ffacb61",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9c672c5b1f0842aa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "024c79712e8b4479",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ec9d3709a609f8bb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "card-board:CardBoard": false
+    }
+  },
+  "active": "32ebc0d9309762e0",
+  "lastOpenFiles": [
+    "CTC控制机械臂在不同轨迹下的效果实验记录.md",
+    "CTC轨迹跟踪实验记录.md",
+    "ctc_pid参数整定实验记录.md",
+    "机械臂初始姿态计算.md",
+    "ctc_pid参数整定实验记录.pdf",
+    "NotesForSrtp/机械臂初始姿态计算.md",
+    "NotesForSrtp/ctc_pid参数整定实验记录.md",
+    "NotesForSrtp",
+    "Welcome.md"
+  ]
+}
