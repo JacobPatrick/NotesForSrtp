@@ -111,7 +111,9 @@ set_param(path,'Value',pid_params);
 
 % assign the initial guess of pose
 eeName = 'Body10';
+eeTrVec
 eePose = [1,0,0,0,0,-pi];
+
 TForm = eepose2tform(eePose);
 weights = [1,1,1,1,1,1];
 initGuess = homeConfiguration(DOF7_iiwa14);
@@ -119,11 +121,10 @@ initGuess = homeConfiguration(DOF7_iiwa14);
 ik = inverseKinematics('RigidBodyTree',DOF7_iiwa14,'SolverAlgorithm','LevenbergMarquardt');
 [config,info] = ik(eeName,TForm,weights,initGuess);
 jointAngles = [config.JointPosition];
-path = [mdl,''];
+path = [mdl,'/Constant'];
 set_param(path,'Value',jointAngles);
 
 save_system(mdl);
-
 sim(mdl, [0 8]);
 
 %% Compare Reference Trajectory with Real Trajectory
