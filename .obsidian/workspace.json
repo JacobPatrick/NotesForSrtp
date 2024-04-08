@@ -8,6 +8,18 @@
         "type": "tabs",
         "children": [
           {
+            "id": "fd2d01ffc7c85f8c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ctc_pid参数整定实验记录.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "dd9d4c40d0b63fa0",
             "type": "leaf",
             "state": {
@@ -19,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CTC轨迹跟踪实验记录.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CTC轨迹跟踪实验记录.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CTC轨迹跟踪实验记录.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -147,10 +160,11 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "dd9d4c40d0b63fa0",
+  "active": "e82b9373ef8422a4",
   "lastOpenFiles": [
-    "CTC-PID参数整定实验记录.md",
+    "conflict-files-obsidian-git.md",
     "CTC轨迹跟踪实验记录.md",
+    "CTC-PID参数整定实验记录.md",
     "Welcome.md"
   ]
 }
