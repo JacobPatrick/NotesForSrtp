@@ -1,26 +1,14 @@
 {
   "main": {
-    "id": "fdbe995ed2691377",
+    "id": "9e34197326b62631",
     "type": "split",
     "children": [
       {
-        "id": "6351aebd62887faf",
+        "id": "25d266e46a25092e",
         "type": "tabs",
         "children": [
           {
-            "id": "fd2d01ffc7c85f8c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ctc_pid参数整定实验记录.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dd9d4c40d0b63fa0",
+            "id": "32ebc0d9309762e0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,22 +19,21 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "14130af61413c1f2",
+    "id": "e6cc3614fb580282",
     "type": "split",
     "children": [
       {
-        "id": "68aaba6313d11ec4",
+        "id": "165cb2e0509580e2",
         "type": "tabs",
         "children": [
           {
-            "id": "5e75ce5b24b4c4ba",
+            "id": "7272063a83ad4b80",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -56,7 +43,7 @@
             }
           },
           {
-            "id": "47a91555ec629145",
+            "id": "abb81819c2432296",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -71,7 +58,7 @@
             }
           },
           {
-            "id": "8ec2eed6ff90e623",
+            "id": "be698fe9a5831088",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -82,18 +69,18 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "dc5096a10e73272c",
+    "id": "63492313829104a3",
     "type": "split",
     "children": [
       {
-        "id": "dd1b6e2cfe0f2ab9",
+        "id": "df9e309bd711a34b",
         "type": "tabs",
         "children": [
           {
-            "id": "43d24c6f02db9ed5",
+            "id": "6be5dc9b9ffacb61",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -110,7 +97,7 @@
             }
           },
           {
-            "id": "da997090cef36d2c",
+            "id": "9c672c5b1f0842aa",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -122,7 +109,7 @@
             }
           },
           {
-            "id": "316d411d5f0f0952",
+            "id": "024c79712e8b4479",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,7 +120,7 @@
             }
           },
           {
-            "id": "3c56e45037e8d688",
+            "id": "ec9d3709a609f8bb",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -160,10 +147,15 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "dd9d4c40d0b63fa0",
+  "active": "32ebc0d9309762e0",
   "lastOpenFiles": [
     "ctc_pid参数整定实验记录.md",
     "CTC控制机械臂在不同轨迹下的效果实验记录.md",
+    "机械臂初始姿态计算.md",
+    "ctc_pid参数整定实验记录.pdf",
+    "NotesForSrtp/机械臂初始姿态计算.md",
+    "NotesForSrtp/ctc_pid参数整定实验记录.md",
+    "NotesForSrtp",
     "Welcome.md"
   ]
 }
