@@ -55,5 +55,6 @@ aik = analyticalInverseKinematics(robotRBT);    % robotRBT是机械臂模型的r
 ```matlab
 robotRBT = DOF7_iiwa14;
 ik = inverseKinematics('RigidBodyTree',robotRBT);    % 创建用于逆运动学求解的求解器，默认使用BFGS算法求解
+%ik = inverseKinematics('RigidBodyTree',robotRBT,'SolverAlgorithm','LevenbergMarquardt');    %使用LM算法求解
 [config,info] = ik(eeName,eePose,weights,initGuess);    %求解
 ```
