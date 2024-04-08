@@ -121,8 +121,9 @@ initGuess = homeConfiguration(DOF7_iiwa14);
 ik = inverseKinematics('RigidBodyTree',DOF7_iiwa14,'SolverAlgorithm','LevenbergMarquardt');
 [config,info] = ik(eeName,TForm,weights,initGuess);
 jointAngles = [config.JointPosition];
+str_jointAngles = mat2str(jointAngles);
 path = [mdl,'/Constant'];
-set_param(path,'Value',jointAngles);
+set_param(path,'Value',str_jointAngles);
 
 save_system(mdl);
 sim(mdl, [0 8]);
