@@ -36,10 +36,11 @@
 # 参考材料
 
 1. [Modeling Inverse Kinematics in a Robotic Arm - MATLAB & Simulink - MathWorks 中国](https://ww2.mathworks.cn/help/fuzzy/modeling-inverse-kinematics-in-a-robotic-arm.html)
-	1. 展示了一种利用ANFIS网络构建的模糊系统，并以此通过末端执行机构位姿预测机械臂的关节角度
+	1. 展示了一种利用ANFIS网络构建的模糊系统，并以此通过末端执行机构位姿预测机械臂的关节角度（没什么用）
 2. [Solve closed-form inverse kinematics - MATLAB - MathWorks 中国](https://ww2.mathworks.cn/help/robotics/ref/analyticalinversekinematics.html)
-	1. 提供了求刚体树形机器人闭式解的工具
+	1. 提供了求刚体树形机器人闭式解的工具（算不了）
 3. [创建逆运动学求解器 - MATLAB - MathWorks 中国 --- Create inverse kinematic solver - MATLAB - MathWorks 中国](https://ww2.mathworks.cn/help/robotics/ref/inversekinematics-system-object.html)
+	1. 使用数值法求解机械臂逆运动学问题
 
 ## Robotics Model Toolbox
 
@@ -56,7 +57,7 @@ aik = analyticalInverseKinematics(robotRBT);    % robotRBT是机械臂模型的r
 robotRBT = DOF7_iiwa14;    % 机械臂rigidBodyTree
 eeName = '0';    % 末端执行器名称
 eePose = [1,0,0,0,0,-pi];    % 末端执行器初始位姿向量
-TForm = eePose2Tform(eePose);    % 将位姿向量转化为齐次变换矩阵
+TForm = eepose2tform(eePose);    % 将位姿向量转化为齐次变换矩阵
 weights = [1,1,1,1,1,1]    % 姿态误差加权向量
 initGuess = 
 
@@ -67,7 +68,7 @@ ik = inverseKinematics('RigidBodyTree',robotRBT);    % 创建用于逆运动学�
 disp(config);
 
 
-function TForm = eePose2Tform(eePose)
+function TForm = eepose2tform(eePose)
 	TrVec = eePose(1:3);
 	EulZYX = eePose(4:6);
 	TrMat = trvec2tform(TrVec);
