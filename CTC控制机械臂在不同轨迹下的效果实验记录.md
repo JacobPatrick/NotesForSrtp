@@ -25,6 +25,35 @@
 
 # 四、算法实现
 
+## 4.1 逆运动学求解机械臂初始关节角度
+
+```matlab
+%%导入机械臂模型，并设置求解参数
+robotRBT = DOF7_iiwa14;
+eeName = 'Body10';    % 末端执行器名称
+eePose = [1,0,0,0,0,-pi];    % 末端执行器初始位姿向量
+TForm = eepose2tform(eePose);    % 将位姿向量转化为齐次变换矩阵
+weights = [1,1,1,1,1,1];    % 姿态误差加权向量
+initGuess = homeConfiguration(robotRBT);    % 关节角度迭代初值
+
+%%逆运动学求解初始关节角度
+% ik = inverseKinematics('RigidBodyTree',robotRBT);    % 创建用于逆运动学求解的求解器，默认使用BFGS算法求解
+ik = inverseKinematics('RigidBodyTree',robotRBT,'SolverAlgorithm','LevenbergMarquardt');    % 使用LM算法求解
+[config,info] = ik(eeName,TForm,weights,initGuess);    %逆运动学求解
+jointAngle = [config.JointPosition];
+disp(jointAngle);
+
+%%末端执行器位姿向量与齐次变换矩阵转换函数
+function TForm = eepose2tform(eePose)
+	TrVec = eePose(1:3);
+	EulZYX = eePose(4:6);
+	TrMat = trvec2tform(TrVec);
+	RotMat = eul2tform(EulZYX, 'ZYX');
+	TForm = TrMat * RotMat;
+end
+
+```
+
 # 五、实验结果与分析
 
 ## 5.1 机械臂初始关节角度计算结果
