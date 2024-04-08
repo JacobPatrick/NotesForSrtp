@@ -162,6 +162,7 @@ filename = sprintf('traj_kp_%d_kd_%d.png',kp,kd);
 fullpath = strcat('fig/',filename);
 saveas(gcf,fullpath);
 
+%% Local Function
 function TForm = eepose2tform(eePose)
 	TrVec = eePose(1:3);
 	EulZYX = eePose(4:6);
@@ -174,7 +175,7 @@ end
 
 ## 5.1 初始关节角度计算结果
 
-略，其实这一步或许不必要，因为在CTC模型的逆运动学部分已经具备求初始时刻以及过程中关节角度的能力
+
 
 ## 5.2 CTC控制机械臂跟踪不同轨迹的效果
 
