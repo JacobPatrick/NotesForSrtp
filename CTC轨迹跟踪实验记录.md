@@ -177,6 +177,27 @@ end
 
 ## 5.2 CTC控制机械臂跟踪不同轨迹的效果
 
+### 5.2.1 正n边形轨迹
+
+最初是想做个圆，但是注意到；同时由于机械臂尺寸数值并不大，设置的轨迹坐标不应过大，否则在模拟过程中会出现奇异点而导致不可解。轨迹通过如下方式生成，以正50边形为例
+
+```matlab
+% generate a n-side regular polygon trajectory
+n = 50;
+nlist = 1:n+1;
+
+EulZYXpoints2 = repmat([0;0;-pi],[1,n+1]);
+
+waypoints_x = arrayfun(@cos,nlist);
+waypoints_y = arrayfun(@sin,nlist);
+waypoints_z = ones(1,n+1) * 0.6500;
+
+waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
+
+waypointsTime = repmat([2;2;2],[1,n]);
+```
+
+
 # 六、下一步实验计划
 
 # Notes
