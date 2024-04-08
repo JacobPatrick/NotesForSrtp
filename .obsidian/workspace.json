@@ -31,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ctc_pid参数整定实验记录.md",
+                "file": "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ctc_pid参数整定实验记录.md",
+                "file": "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ctc_pid参数整定实验记录.md"
+                "file": "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md"
               }
             }
           }
@@ -159,10 +160,10 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "fd2d01ffc7c85f8c",
+  "active": "dd9d4c40d0b63fa0",
   "lastOpenFiles": [
-    "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md",
     "ctc_pid参数整定实验记录.md",
+    "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md",
     "Welcome.md"
   ]
 }
