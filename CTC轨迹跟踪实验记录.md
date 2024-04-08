@@ -200,6 +200,21 @@ waypointsTime = repmat([1;1;1],[1,n]);
 ```
 
 最初设定的轨迹是一个内接于单位圆的正50边形，但在模拟过程中出现==奇异点==，此后尝试了另一些不同的正50边形轨迹，很多同样存在此问题。猜测是由于==轨迹上的某些位置该机械臂难以到达==，或者由于==CTC-PID控制的方案本身存在局限，使得对关节角度规划不合理，导致末端运动受限==。
+
+### 5.2.2 随机折线轨迹
+
+% generate a random polyline with n nodes
+n = 8;
+waypoints_x = rand(1,n) * 6 - 3;
+waypoints_y = rand(1,n) * 6 - 3;
+waypoints_z = ones(1,n) * 0.6500;
+
+waypoints_x = waypoints_x';
+waypoints_y = waypoints_y';
+waypoints_z = waypoints_z';
+
+waypoints2 = [waypoints_x,waypoints_y,waypoints_z];
+
 # 六、下一步实验计划
 
 1. 仍然尝试用智能体调节pid参数的方式，将DDPG智能体换成TD3，SAC等，比较控制效果，希望在月底期中考试后一周左右的时间可以完成；
