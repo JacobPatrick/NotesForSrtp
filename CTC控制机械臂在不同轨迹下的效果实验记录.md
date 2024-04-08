@@ -46,6 +46,6 @@
 
 ```matlab
 % 创建用于求机械臂逆运动学解析解的求解器
-analyticalIK = analyticalInverseKinematics(robotRBT)    % robotRBT是机械臂模型的rigidBodyTree对象
+aIK = analyticalInverseKinematics(robotRBT)    % robotRBT是机械臂模型的rigidBodyTree对象
 ```
 
