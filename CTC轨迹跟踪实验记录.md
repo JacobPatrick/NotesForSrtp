@@ -111,9 +111,9 @@ set_param(path,'Value',pid_params);
 
 % assign the initial guess of pose
 eeName = 'Body10';
-eeTrVec
-eePose = [1,0,0,0,0,-pi];
-
+eeTrVec = waypoints2(:,0);    
+eeEulZYX = EulZYXpoints2(:,0);
+eePose = [eeTrVec',eeEulZYX'];
 TForm = eepose2tform(eePose);
 weights = [1,1,1,1,1,1];
 initGuess = homeConfiguration(DOF7_iiwa14);
