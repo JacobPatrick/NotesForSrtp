@@ -56,6 +56,85 @@ function TForm = eepose2tform(eePose)
 end
 ```
 
+## 4.2 CTC轨迹跟踪
+
+```matlab
+clc;
+clear;
+close all;
+
+%% Trajectory generate
+Ts=0.001;
+
+DOF7_iiwa14=importrobot('iiwa14_multibody_waypoints');
+
+EulZYXpoints2 = [...
+                0  0  -pi;...
+                0  0  -pi;...
+                0  0  -pi;...
+                0  0  -pi;...
+                0  0  -pi]';
+
+waypoints2 =  [... 
+            -0.1250    0.5000      0.6500;...
+            -0.1250    0.3000      0.6500;...
+             0.0750    0.3000      0.6500;...
+             0.0750    0.5000      0.6500;...
+             -0.1250    0.5000      0.6500]';
+
+waypointsTime = [ 2 2 2 2;
+                  2 2 2 2;
+                  2 2 2 2];
+
+%% CTC-PID Control
+mdl = 'iiwa14_multibody_dynamics_CTC_modified';
+load_system(mdl);
+
+% assign the pid params
+kp = 10000;
+kd = 160;
+pid_params = sprintf('[%d %d]',kp,kd);
+path = [mdl,'/pid_params'];
+set_param(path,'Value',pid_params);
+save_system(mdl);
+
+sim(mdl, [0 8]);
+
+%% Compare Reference Trajectory with Real Trajectory
+dataRef = load('recordingRef1.mat');
+dataReal = load('recordingReal1.mat');
+
+dataLength = length(dataRef.data{1}.Values.Data);
+
+% cumulative error
+cumErr = 0;
+
+for i = 1:1:dataLength
+    XRef(i) = dataRef.data{1}.Values.Data(1,1,i);
+    YRef(i) = dataRef.data{2}.Values.Data(1,1,i);
+    XReal(i) = dataReal.data{1}.Values.Data(1,1,i);
+    YReal(i) = dataReal.data{2}.Values.Data(1,1,i);
+
+    err = norm([XReal(i) YReal(i)] - [XRef(i) YRef(i)]);
+    cumErr = cumErr + err;
+end
+
+% draw reference trajectory and real trajectory
+plot(XRef,YRef);
+hold on
+plot(XReal,YReal);
+
+TextBox = annotation('textbox',[0.15,0.2,0.1,0.1]);
+TextBox.String = {['kp:',num2str(kp)], ['kd:',num2str(kd)], ['cumErr:',num2str(cumErr)]};   
+TextBox.BackgroundColor = [1 1 1 0];
+TextBox.FontSize = 12;
+
+%print and save the figure
+filename = sprintf('traj_kp_%d_kd_%d.png',kp,kd);
+fullpath = strcat('fig/',filename);
+saveas(gcf,fullpath);
+
+```
 # 五、实验结果与分析
 
 ## 5.1 初始关节角度计算结果
