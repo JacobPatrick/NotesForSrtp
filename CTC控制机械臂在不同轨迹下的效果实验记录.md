@@ -55,11 +55,11 @@ aik = analyticalInverseKinematics(robotRBT);    % robotRBT是机械臂模型的r
 
 ```matlab
 robotRBT = DOF7_iiwa14;    % 机械臂rigidBodyTree
-eeName = '0';    % 末端执行器名称
+eeName = 'iiwa_link_7';    % 末端执行器名称
 eePose = [1,0,0,0,0,-pi];    % 末端执行器初始位姿向量
 TForm = eepose2tform(eePose);    % 将位姿向量转化为齐次变换矩阵
-weights = [1,1,1,1,1,1]    % 姿态误差加权向量
-initGuess = 
+weights = [1,1,1,1,1,1];    % 姿态误差加权向量
+initGuess = [0,0,0,0,0,0,0];    % 关节角度迭代初值
 
 
 ik = inverseKinematics('RigidBodyTree',robotRBT);    % 创建用于逆运动学求解的求解器，默认使用BFGS算法求解
