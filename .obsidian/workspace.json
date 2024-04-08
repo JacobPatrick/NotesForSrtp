@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md",
+                "file": "CTC控制机械臂在不同轨迹下的效果实验记录.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md",
+                "file": "CTC控制机械臂在不同轨迹下的效果实验记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md",
+                "file": "CTC控制机械臂在不同轨迹下的效果实验记录.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md"
+                "file": "CTC控制机械臂在不同轨迹下的效果实验记录.md"
               }
             }
           }
@@ -163,7 +163,7 @@
   "active": "dd9d4c40d0b63fa0",
   "lastOpenFiles": [
     "ctc_pid参数整定实验记录.md",
-    "CTC-PID控制机械臂在不同轨迹下的效果实验记录.md",
+    "CTC控制机械臂在不同轨迹下的效果实验记录.md",
     "Welcome.md"
   ]
 }
