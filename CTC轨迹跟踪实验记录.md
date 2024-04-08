@@ -179,7 +179,7 @@ end
 
 ## 5.1 初始关节角度计算结果
 
-在 `robot_initial_pose_ik.mlx` 中
+在 `robot_initial_pose_ik.mlx` 中，根据末端执行器位姿向量 `eePose` 计算7个关节的初始角度，
 
 ## 5.2 CTC控制机械臂跟踪不同轨迹的效果
 
