@@ -181,7 +181,7 @@ end
 
 在 `robot_initial_pose_ik.mlx` 中，根据末端执行器位姿向量 `eePose` 计算7个关节的初始角度 `jointAngles`，下表展示了一些输入位姿向量及其对应的输出关节角度
 
-| 序号  | 位姿向量 `eePose`                  | 关节角度 ``                                                       |
+| 序号  | 位姿向量 `eePose`                  | 关节角度 `jointAngles`                                            |
 | --- | ------------------------------ | ------------------------------------------------------------- |
 | 1   | [1, 0, 0, 0, 0, -pi]           | [-2.9671, -1.8036, 1.5703, -0.0831, -1.5487, -1.315, -0.0665] |
 | 2   | [0, 0.3, 0.1, pi/3, -pi/6, pi] | [-1.2535, -0.9506, 2.9671, -2.0944, -2.7439, 0.5781, 0.387]   |
@@ -199,16 +199,17 @@ end
 % generate a n-side regular polygon trajectory
 n = 50;
 nlist = 1:n+1;
+nlist = nlist * 2 * pi / n;
 
 EulZYXpoints2 = repmat([0;0;-pi],[1,n+1]);
 
-waypoints_x = arrayfun(@cos,nlist);
-waypoints_y = arrayfun(@sin,nlist);
+waypoints_x = arrayfun(@cos,nlist)/5 + 0.3;
+waypoints_y = arrayfun(@sin,nlist)/5 + 0.3;
 waypoints_z = ones(1,n+1) * 0.6500;
 
 waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
 
-waypointsTime = repmat([1;1;1],[1,n]);
+waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 ```
 
 最初设定的轨迹是一个内接于单位圆的正50边形，但在模拟过程中出现==奇异点==，此后尝试了另一些不同的正50边形轨迹，很多同样存在此问题。猜测是由于==轨迹上的某些位置该机械臂难以到达==，或者由于==CTC-PID控制的方案本身存在局限，使得对关节角度规划不合理，导致末端运动受限==。
@@ -220,11 +221,16 @@ waypointsTime = repmat([1;1;1],[1,n]);
 ```matlab
 % generate a random polyline with n nodes
 n = 8;
-waypoints_x = rand(1,n) * 0.5;
-waypoints_y = rand(1,n) * 0.5;
-waypoints_z = ones(1,n) * 0.6500;
+
+EulZYXpoints2 = repmat([0;0;-pi],[1,n+1]);
+
+waypoints_x = rand(1,n + 1) * 0.5;
+waypoints_y = rand(1,n + 1) * 0.5;
+waypoints_z = ones(1,n + 1) * 0.6500;
 
 waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
+
+waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 ```
 
 
