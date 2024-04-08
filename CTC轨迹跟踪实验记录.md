@@ -86,16 +86,17 @@ DOF7_iiwa14=importrobot('iiwa14_multibody_waypoints');
 % generate a n-side regular polygon trajectory
 n = 50;
 nlist = 1:n+1;
+nlist = nlist * pi / 25;
 
 EulZYXpoints2 = repmat([0;0;-pi],[1,n+1]);
 
-waypoints_x = arrayfun(@cos,nlist);
-waypoints_y = arrayfun(@sin,nlist);
+waypoints_x = arrayfun(@cos,nlist)/5 + 0.3;
+waypoints_y = arrayfun(@sin,nlist)/5 + 0.3;
 waypoints_z = ones(1,n+1) * 0.6500;
 
 waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
 
-waypointsTime = repmat([2;2;2],[1,n]);
+waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 %% CTC-PID Control
 mdl = 'iiwa14_multibody_dynamics_CTC_modified';
