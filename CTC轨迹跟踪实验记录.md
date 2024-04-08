@@ -58,8 +58,8 @@ initGuess = homeConfiguration(robotRBT);    % 关节角度迭代初值
 % ik = inverseKinematics('RigidBodyTree',robotRBT);    % 创建用于逆运动学求解的求解器，默认使用BFGS算法求解
 ik = inverseKinematics('RigidBodyTree',robotRBT,'SolverAlgorithm','LevenbergMarquardt');    % 使用LM算法求解
 [config,info] = ik(eeName,TForm,weights,initGuess);    %逆运动学求解
-jointAngle = [config.JointPosition];
-disp(jointAngle);
+jointAngles = [config.JointPosition];
+disp(jointAngles);
 
 %% 末端执行器位姿向量与齐次变换矩阵转换函数
 function TForm = eepose2tform(eePose)
@@ -110,7 +110,17 @@ path = [mdl,'/pid_params'];
 set_param(path,'Value',pid_params);
 
 % assign the initial guess of pose
+eeName = 'Body10';
+eePose = [1,0,0,0,0,-pi];
+TForm = eepose2tform(eePose);
+weights = [1,1,1,1,1,1];
+initGuess = homeConfiguration(DOF7_iiwa14);
 
+ik = inverseKinematics('RigidBodyTree',DOF7_iiwa14,'SolverAlgorithm','LevenbergMarquardt');
+[config,info] = ik(eeName,TForm,weights,initGuess);
+jointAngles = [config.JointPosition];
+path = [mdl,''];
+set_param(path,'Value',jointAngles);
 
 save_system(mdl);
 
@@ -150,6 +160,13 @@ filename = sprintf('traj_kp_%d_kd_%d.png',kp,kd);
 fullpath = strcat('fig/',filename);
 saveas(gcf,fullpath);
 
+function TForm = eepose2tform(eePose)
+	TrVec = eePose(1:3);
+	EulZYX = eePose(4:6);
+	TrMat = trvec2tform(TrVec);
+	RotMat = eul2tform(EulZYX, 'ZYX');
+	TForm = TrMat * RotMat;
+end
 ```
 # 五、实验结果与分析
 
