@@ -216,7 +216,7 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 ![image.png](https://s2.loli.net/2024/04/08/1tlTycAizYgjw5D.png)
 
-另外，因为没有找到模型中机械臂初始位置
+另外，因为没有找到模型中机械臂初始位置设置在哪里，==实际实验中暂时没能将初始关节角度调过来==。上图中开始时的一段轨迹就是由于末端执行器没有在目标路径起点d稍后我们会先调好这个并计算
 
 如果暂时不考虑开始阶段远离目标轨迹的一段实际轨迹，CTC-PID控制机械臂轨迹跟踪的效果还是很好的，此前根据正方形轨迹调整的参数在此处仍然有不错的表现。
 
@@ -236,6 +236,8 @@ waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
 
 waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 ```
+
+![image.png](https://s2.loli.net/2024/04/08/NeIlnXwca6mAsMW.png)
 
 
 # 六、下一步实验计划
