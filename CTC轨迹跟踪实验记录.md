@@ -9,7 +9,32 @@
 项目文件夹 `20240408-CTC机械臂控制-其他轨迹` 结构如下
 
 ```shell
-
+E:.
+└─初始构型指定
+    ├─fig
+    ├─iiwa_description
+    │  ├─meshes
+    │  │  ├─iiwa14
+    │  │  │  ├─collision
+    │  │  │  └─visual
+    │  │  └─iiwa7
+    │  │      ├─collision
+    │  │      └─visual
+    │  └─urdf
+    └─slprj
+        ├─sim
+        │  └─varcache
+        │      └─iiwa14_multibody_dynamics_CTC_modified
+        │          └─tmwinternal
+        ├─_jitprj
+        └─_sfprj
+            ├─EMLReport
+            │  └─sdYXwxUFb6nCvw05C3Ip8RB
+            ├─iiwa14_multibody_dynamics_CTC_modified
+            │  └─_self
+            │      └─sfun
+            │          └─info
+            └─precompile
 ```
 
 运行时，先清除运行环境中其他名为 `iiwa14_multibody_dynamics_CTC_modified` 的模型，打开 `初始构型指定` 文件夹，运行 `ctcControlFile.mlx` 文件。得到的轨迹图存在 `初始构型指定/fig` 文件夹下。
