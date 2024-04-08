@@ -44,7 +44,8 @@
 
 ### analyticalInverseKinematics求解闭式逆运动学
 
-```
+```matlab
 % 创建用于求机械臂逆运动学解析解的求解器
-analyticalIK = analyticalInverseKinematics(robotRBT)    % ro'b
+analyticalIK = analyticalInverseKinematics(robotRBT)    % robotRBT是机械臂模型的rigidBodyTree对象
 ```
+
