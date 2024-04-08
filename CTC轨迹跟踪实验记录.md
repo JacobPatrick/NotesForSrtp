@@ -203,17 +203,16 @@ waypointsTime = repmat([1;1;1],[1,n]);
 
 ### 5.2.2 随机折线轨迹
 
+```matlab
 % generate a random polyline with n nodes
 n = 8;
-waypoints_x = rand(1,n) * 6 - 3;
-waypoints_y = rand(1,n) * 6 - 3;
+waypoints_x = rand(1,n) * 0.5;
+waypoints_y = rand(1,n) * 0.5;
 waypoints_z = ones(1,n) * 0.6500;
 
-waypoints_x = waypoints_x';
-waypoints_y = waypoints_y';
-waypoints_z = waypoints_z';
+waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
+```
 
-waypoints2 = [waypoints_x,waypoints_y,waypoints_z];
 
 # 六、下一步实验计划
 
