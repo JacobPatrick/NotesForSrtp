@@ -55,5 +55,5 @@ aik = analyticalInverseKinematics(robotRBT);    % robotRBT是机械臂模型的r
 ```matlab
 robotRBT = DOF7_iiwa14;
 ik = inverseKinematics('RigidBodyTree',robotRBT);    % 创建用于逆运动学求解的求解器
-
+[config,info] = ik()
 ```
