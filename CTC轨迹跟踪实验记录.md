@@ -46,6 +46,10 @@ Simscape Multibody                                    版本 7.7              (R
 ## 4.1 求解初始关节角度
 
 ```matlab
+clc;
+clear;
+close all;
+
 %% 导入机械臂模型，并设置求解参数
 robotRBT = DOF7_iiwa14;
 eeName = 'Body10';    % 末端执行器名称
@@ -175,7 +179,7 @@ end
 
 ## 5.1 初始关节角度计算结果
 
-
+在 `robot_initial_pose_ik.mlx` 中
 
 ## 5.2 CTC控制机械臂跟踪不同轨迹的效果
 
