@@ -7,7 +7,7 @@
 
 项目文件夹 `20240408-CTC机械臂控制-其他轨迹` 结构如下
 
-```
+```shell
 
 ```
 
@@ -39,6 +39,7 @@
 	1. 展示了一种利用ANFIS网络构建的模糊系统，并以此通过末端执行机构位姿预测机械臂的关节角度
 2. [Solve closed-form inverse kinematics - MATLAB - MathWorks 中国](https://ww2.mathworks.cn/help/robotics/ref/analyticalinversekinematics.html)
 	1. 提供了求刚体树形机器人闭式解的工具
+3. [创建逆运动学求解器 - MATLAB - MathWorks 中国 --- Create inverse kinematic solver - MATLAB - MathWorks 中国](https://ww2.mathworks.cn/help/robotics/ref/inversekinematics-system-object.html)
 
 ## Robotics Model Toolbox
 
@@ -46,6 +47,12 @@
 
 ```matlab
 % 创建用于求机械臂逆运动学解析解的求解器
-aIK = analyticalInverseKinematics(robotRBT)    % robotRBT是机械臂模型的rigidBodyTree对象
+aik = analyticalInverseKinematics(robotRBT);    % robotRBT是机械臂模型的rigidBodyTree对象
 ```
 
+### inverseKinematics求解逆运动学
+
+```matlab
+% 创建用于逆运动学求解的求解器
+ik = inverseKinematics;
+```
