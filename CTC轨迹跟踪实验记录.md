@@ -207,7 +207,33 @@ end
 ## 4.2 CTC轨迹跟踪[修改]
 
 > [!NOTE]
-> 此处修改主要添加了机械臂初始关节角度调整的代码，将机械臂关节角度在模拟开始前调整到适合起点的
+> 此处修改主要添加了机械臂初始关节角度调整的代码，将机械臂末端执行器在模拟开始前调整到轨迹起点的位置
+> 
+> ==原代码片段== zhe
+> 
+> ```
+> % assign the initial guess of pose
+eeName = 'Body10';
+eeTrVec = waypoints2(:,0);    % 列向量
+eeEulZYX = EulZYXpoints2(:,0);    % 列向量
+eePose = [eeTrVec',eeEulZYX'];    % 行向量
+TForm = eepose2tform(eePose);
+weights = [1,1,1,1,1,1];
+initGuess = homeConfiguration(DOF7_iiwa14);
+
+ik = inverseKinematics('RigidBodyTree',DOF7_iiwa14,'SolverAlgorithm','LevenbergMarquardt');
+[config,info] = ik(eeName,TForm,weights,initGuess);
+jointAngles = [config.JointPosition];
+str_jointAngles = mat2str(jointAngles);
+path = [mdl,'/Constant'];
+set_param(path,'Value',str_jointAngles);
+> ```
+> 
+> ==新代码片段==
+> 
+```
+
+```
 
 # 五、实验结果与分析
 
