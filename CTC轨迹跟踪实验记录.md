@@ -248,7 +248,7 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 ### 5.2.2 随机折线轨迹
 
 ```matlab
-% generate a random polyline with n nodes
+% generate a random polyline with n+1 nodes
 n = 8;
 
 EulZYXpoints2 = repmat([0;0;-pi],[1,n+1]);
