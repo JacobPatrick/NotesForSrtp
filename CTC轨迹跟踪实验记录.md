@@ -304,7 +304,7 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 | n   | Fig                                                                         | cunErr  |         |
 | --- | --------------------------------------------------------------------------- | ------- | ------- |
 | 10  | ![正10边形轨迹.png\|400](https://s2.loli.net/2024/04/09/KICSZYhG6MbuQXy.png)<br> | 0.97586 |         |
-| 30  | ![正30边形轨迹.png\|400](https://s2.loli.net/2024/04/10/sCw24XaldNcgu1t.png)     |         | 0.95848 |
+| 30  | ![正30边形轨迹.png\|400](https://s2.loli.net/2024/04/10/sCw24XaldNcgu1 0.95848   |         | 0.95848 |
 | 50  | ![正50边形轨迹.png\|400](https://s2.loli.net/2024/04/09/byvC2kzpOGK4XLI.png)     | 1.0259  |         |
 | 100 | ![正100边形轨迹.png\|400](https://s2.loli.net/2024/04/10/OEZ4BYXTiKFMLeC.png)         | 1.4083  |         |
 
