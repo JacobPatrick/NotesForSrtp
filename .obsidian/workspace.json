@@ -15,7 +15,7 @@
               "state": {
                 "file": "CTC轨迹跟踪实验记录.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           },
@@ -27,7 +27,7 @@
               "state": {
                 "file": "CTC-PID参数整定实验记录.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
@@ -159,7 +159,7 @@
       "card-board:CardBoard": false
     }
   },
-  "active": "5e75ce5b24b4c4ba",
+  "active": "dd9d4c40d0b63fa0",
   "lastOpenFiles": [
     "CTC-PID参数整定实验记录.md",
     "CTC轨迹跟踪实验记录.md",
