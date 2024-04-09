@@ -303,8 +303,8 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 | n   | Fig                                                                         | cunErr  |         |
 | --- | --------------------------------------------------------------------------- | ------- | ------- |
-| 10  | ![正10边形轨迹.png\|400](https://s2.loli.net/2024/04/09/KICSZYhG6MbuQXy.png)<br> | 0.97586 |         |
-| 30  | ![正30边形轨迹.png\|400](https://s2.loli.net/2024/04/10/sCw24XaldNcgu1 0.95848   |         | 0.95848 |
+| 10  | ![正10边形轨迹.png\|400](https://s2.loli.net/2024/04/09/KICSZYhG6MbuQXy.png) | 0.97586 |         |
+| 30  | ![正30边形轨迹.png\|400](https://s2.loli.net/2024/04/10/sCw24XaldNcgu1           | 0.95848        |  |
 | 50  | ![正50边形轨迹.png\|400](https://s2.loli.net/2024/04/09/byvC2kzpOGK4XLI.png)     | 1.0259  |         |
 | 100 | ![正100边形轨迹.png\|400](https://s2.loli.net/2024/04/10/OEZ4BYXTiKFMLeC.png)         | 1.4083  |         |
 
@@ -335,11 +335,11 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 修改后轨迹跟踪结果如下，这里展示其中一些结果，另一些在文件夹 `fig` 下
 
-| n   | Fig | cumErr |
-| --- | --- | ------ |
-| 2   |     |        |
-| 8   |     |        |
-| 20  |     |        |
+| n   | Fig                             | cumErr |
+| --- | ------------------------------- | ------ |
+| 2   |                                 |        |
+| 8   | ![随机折线轨迹n_8_1.png](https://s2.loli.net/2024/04/10/byivHdxTrOo5cUC.png)<br> |        |
+| 20  |                                 |        |
 
 
 # 六、下一步实验计划
