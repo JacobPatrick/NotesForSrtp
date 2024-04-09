@@ -341,7 +341,11 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 | 8   | ![随机折线轨迹n_8_1.png\|500](https://s2.loli.net/2024/04/10/byivHdxTrOo5cUC.png)    | 1.8515 |
 | 20  | ![随机折线轨迹_20_1.png\|500](https://s2.loli.net/2024/04/10/qewzYMhLT3jF1N6.png)    | 3.512  |
 
-注意到轨迹跟踪开始阶段可能会出现一些问题，如上面 n = 2 时开始阶段
+注意到轨迹跟踪开始阶段可能会出现一些问题，如上面 n = 2 时开始阶段跟踪出现明显偏差，下面是另外两次实验的结果
+
+![随机折线轨迹_2_2.png](https://s2.loli.net/2024/04/10/naZErLvSls4pAmH.png)
+
+![随机折线轨迹_2_3.png](https://s2.loli.net/2024/04/10/eIL2tg9mC3rYT6v.png)
 
 
 # 六、下一步实验计划
