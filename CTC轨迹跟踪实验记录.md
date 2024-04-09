@@ -301,9 +301,12 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 经过调整，实现了将机械臂预先调整到轨迹起点位置，这样就可以正常进行实验了，结果如下
 
-| n   | fig                                                                     | cunErr |
+| n   | Fig                                                                     | cunErr |
 | --- | ----------------------------------------------------------------------- | ------ |
-| 50  | ![正50边形轨迹.png\|400](https://s2.loli.net/2024/04/09/byvC2kzpOGK4XLI.png) | 1.0    |
+| 10  |                                                                         |        |
+| 30  |                                                                         |        |
+| 50  | ![正50边形轨迹.png\|400](https://s2.loli.net/2024/04/09/byvC2kzpOGK4XLI.png) | 1.0259 |
+| 100 |                                                                         |        |
 
 ### 5.2.2 随机折线轨迹
 
@@ -321,6 +324,7 @@ waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
 
 waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 ```
+
 ![image.png](https://s2.loli.net/2024/04/08/NeIlnXwca6mAsMW.png)
 
 整体上也有不错的轨迹跟踪表现。
@@ -328,6 +332,8 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 ---
 
 ### 5.2.2 随机折线轨迹[修改]
+
+修改后轨迹跟踪结果如下
 
 
 
