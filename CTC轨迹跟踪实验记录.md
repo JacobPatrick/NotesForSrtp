@@ -341,7 +341,7 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 | 8   | ![随机折线轨迹n_8_1.png\|500](https://s2.loli.net/2024/04/10/byivHdxTrOo5cUC.png)    | 1.8515 |
 | 20  | ![随机折线轨迹_20_1.png\|500](https://s2.loli.net/2024/04/10/qewzYMhLT3jF1N6.png)    | 3.512  |
 
-注意到当
+注意到当 n = 2 时，轨迹跟踪开始阶段可能会出现一些问题
 
 
 # 六、下一步实验计划
