@@ -213,24 +213,25 @@ end
 > 
 > ```
 > % assign the initial guess of pose
-eeName = 'Body10';
-eeTrVec = waypoints2(:,0);    % 列向量
-eeEulZYX = EulZYXpoints2(:,0);    % 列向量
-eePose = [eeTrVec',eeEulZYX'];    % 行向量
-TForm = eepose2tform(eePose);
-weights = [1,1,1,1,1,1];
-initGuess = homeConfiguration(DOF7_iiwa14);
-ik = inverseKinematics('RigidBodyTree',DOF7_iiwa14,'SolverAlgorithm','LevenbergMarquardt');
-[config,info] = ik(eeName,TForm,weights,initGuess);
-jointAngles = [config.JointPosition];
-str_jointAngles = mat2str(jointAngles);
-path = [mdl,'/Constant'];
-set_param(path,'Value',str_jointAngles);
+> eeName = 'Body10';
+> eeTrVec = waypoints2(:,0);    % 列向量
+> eeEulZYX = EulZYXpoints2(:,0);    % 列向量
+> eePose = [eeTrVec',eeEulZYX'];    % 行向量
+> TForm = eepose2tform(eePose);
+> weights = [1,1,1,1,1,1];
+> initGuess = homeConfiguration(DOF7_iiwa14);
+> ik = inverseKinematics('RigidBodyTree',DOF7_iiwa14,'SolverAlgorithm','LevenbergMarquardt');
+> [config,info] = ik(eeName,TForm,weights,initGuess);
+> jointAngles = [config.JointPosition];
+> str_jointAngles = mat2str(jointAngles);
+> path = [mdl,'/Constant'];
+> set_param(path,'Value',str_jointAngles);
 > ```
 > 
 > ==新代码片段== 在模拟开始前更改了机械臂关节角度
 > 
-```% adjust the end effector to the start of the trajectory
+```matlab
+% adjust the end effector to the start of the trajectory
 eeName = 'Body10';
 eeTrVec = waypoints2(:,1);    % column vector
 eeEulZYX = EulZYXpoints2(:,1);    % column vector
