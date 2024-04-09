@@ -209,7 +209,7 @@ end
 > [!NOTE]
 > 此处修改主要添加了机械臂初始关节角度调整的代码，将机械臂末端执行器在模拟开始前调整到轨迹起点的位置
 > 
-> ==原代码片段== zhe
+> ==原代码片段== 这段代码其实一点用都没有
 > 
 > ```
 > % assign the initial guess of pose
@@ -229,7 +229,7 @@ path = [mdl,'/Constant'];
 set_param(path,'Value',str_jointAngles);
 > ```
 > 
-> ==新代码片段==
+> ==新代码片段== 在模拟开始前更改了机械臂关节角度
 > 
 ```
 
