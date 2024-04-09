@@ -201,6 +201,13 @@ function TForm = eepose2tform(eePose)
 	TForm = TrMat * RotMat;
 end
 ```
+
+---
+
+## 4.2 CTC轨迹跟踪[修改]
+
+> [!]
+
 # 五、实验结果与分析
 
 ## 5.1 初始关节角度计算结果
@@ -250,7 +257,7 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 ### 5.2.1 正n边形轨迹[修改]
 
-
+经过调整，
 
 ### 5.2.2 随机折线轨迹
 
