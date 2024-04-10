@@ -14,18 +14,6 @@
               "type": "markdown",
               "state": {
                 "file": "CTC轨迹跟踪实验记录.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "543fd4c5261ff1f0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CTC-PID参数整定实验记录.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,8 +86,8 @@
               "type": "backlink",
               "state": {
                 "file": "CTC轨迹跟踪实验记录.md",
-                "collapseAll": true,
-                "extraContext": true,
+                "collapseAll": false,
+                "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -141,8 +129,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
