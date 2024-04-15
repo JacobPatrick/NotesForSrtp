@@ -287,7 +287,7 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 最初设定的轨迹是一个内接于单位圆的正50边形，但在模拟过程中出现==奇异点==，此后尝试了另一些不同的正50边形轨迹，很多同样存在此问题。猜测是由于==轨迹上的某些位置该机械臂难以到达==，或者由于==CTC-PID控制的方案本身存在局限，使得对关节角度规划不合理，导致末端运动受限==。
 
-![image.png](https://s2.loli.net/2024/04/08/1tlTycAizYgjw5D.png)
+![image.png](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050001.png)
 
 另外，因为没有找到模型中机械臂初始位置设置在哪里，==实际实验中暂时没能将初始关节角度调过来==。上图中开始时的一段轨迹就是由于末端执行器没有在目标路径起点造成的，这样计算的cumErr也没有实际意义。稍后我们会先调好这个并计算
 
@@ -301,10 +301,10 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 | n   | Fig                                                                         | cunErr  |
 | --- | --------------------------------------------------------------------------- | ------- |
-| 10  | ![正10边形轨迹.png\|400](https://s2.loli.net/2024/04/09/KICSZYhG6MbuQXy.png) | 0.97586 |
-| 30  | ![正30边形轨迹.png\|400](https://s2.loli.net/2024/04/10/sCw24XaldNcgu1t.png) | 0.95848 |
-| 50  | ![正50边形轨迹.png\|400](https://s2.loli.net/2024/04/09/byvC2kzpOGK4XLI.png)     | 1.0259  |
-| 100 | ![正100边形轨迹.png\|400](https://s2.loli.net/2024/04/10/OEZ4BYXTiKFMLeC.png)         | 1.4083  |
+| 10  | ![正10边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050003.png) | 0.97586 |
+| 30  | ![正30边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-50004.png) | 0.95848 |
+| 50  | ![正50边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050005.png)     | 1.0259  |
+| 100 | ![正100边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050006.png)         | 1.4083  |
 
 ### 5.2.2 随机折线轨迹
 
@@ -323,7 +323,7 @@ waypoints2 = [waypoints_x;waypoints_y;waypoints_z];
 waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 ```
 
-![image.png](https://s2.loli.net/2024/04/08/NeIlnXwca6mAsMW.png)
+![image.png](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050008.png)
 
 整体上也有不错的轨迹跟踪表现。
 
@@ -335,15 +335,15 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 | n   | Fig                                                                       | cumErr |
 | --- | ------------------------------------------------------------------------- | ------ |
-| 2   | ![随机折线轨迹_2_1.png\|500](https://s2.loli.net/2024/04/10/HfzMBjcwFih3IEA.png)<br> | 7.1071 |
-| 8   | ![随机折线轨迹n_8_1.png\|500](https://s2.loli.net/2024/04/10/byivHdxTrOo5cUC.png)    | 1.8515 |
-| 20  | ![随机折线轨迹_20_1.png\|500](https://s2.loli.net/2024/04/10/qewzYMhLT3jF1N6.png)    | 3.512  |
+| 2   | ![随机折线轨迹_2_1.png\|500](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050010.png)<br> | 7.1071 |
+| 8   | ![随机折线轨迹n_8_1.png\|500](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050011.png)    | 1.8515 |
+| 20  | ![随机折线轨迹_20_1.png\|500](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050013.png)    | 3.512  |
 
 注意到轨迹跟踪开始阶段可能会出现一些问题，如上面 n = 2 时开始阶段跟踪出现明显偏差，下面是另外两次实验的结果
 
-![随机折线轨迹_2_2.png](https://s2.loli.net/2024/04/10/naZErLvSls4pAmH.png)
+![随机折线轨迹_2_2.png](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-50035.png)
 
-![随机折线轨迹_2_3.png](https://s2.loli.net/2024/04/10/eIL2tg9mC3rYT6v.png)
+![随机折线轨迹_2_3.png](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050036.png)
 
 
 发现有时跟踪结果较好，有时==在开始阶段跟踪轨迹会明显偏离目标轨迹==。这一问题值得关注，猜测可能与PID控制的特点或机械臂关节角度极限有关。同时，为使末端执行器达到轨迹起点而初始化的关节角度对于特定的后续轨迹跟踪任务很可能不是最优的。
