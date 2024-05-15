@@ -299,12 +299,12 @@ waypointsTime = repmat([8/n;8/n;8/n],[1,n]);
 
 经过调整，实现了将机械臂预先调整到轨迹起点位置，这样就可以正常进行实验了，结果如下
 
-| n   | Fig                                                                         | cunErr  |
-| --- | --------------------------------------------------------------------------- | ------- |
-| 10  | ![正10边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050003.png) | 0.97586 |
-| 30  | ![正30边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-50004.png) | 0.95848 |
-| 50  | ![正50边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050005.png)     | 1.0259  |
-| 100 | ![正100边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050006.png)         | 1.4083  |
+| n   | Fig                                                                                            | cunErr  |
+| --- | ---------------------------------------------------------------------------------------------- | ------- |
+| 10  | ![正10边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050003.png)  | 0.97586 |
+| 30  | ![正30边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-50004.png)   | 0.95848 |
+| 50  | ![正50边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050005.png)  | 1.0259  |
+| 100 | ![正100边形轨迹.png\|400](https://jacob-patrick.oss-cn-hangzhou.aliyuncs.com/2024-04-15-050006.png) | 1.4083  |
 
 ### 5.2.2 随机折线轨迹
 
